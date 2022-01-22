@@ -1,10 +1,21 @@
 import MeetupForm from "../components/meetups/MeetupForm";
 
 function NewMeetups() {
+  function addMeetupHandler(meetupData) {
+    fetch(
+      "https://meetups-app-27c87-default-rtdb.firebaseio.com/meetups.json",
+      {
+        method: "POST",
+        body: JSON.stringify(meetupData),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+
   return (
     <section>
       <h2>Add New Meetup</h2>
-      <MeetupForm />
+      <MeetupForm onAddMeetup={addMeetupHandler} />
     </section>
   );
 }
