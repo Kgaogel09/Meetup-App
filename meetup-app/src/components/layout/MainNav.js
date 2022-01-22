@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import classes from "./MainNav.module.scss";
 
 function MainNav() {
   return (
-    <div>
-      <h2>Meetups</h2>
+    <header className={classes.header}>
+      <h2 className={classes.logo}>Meetups</h2>
       <nav>
         <ul>
           <li>
@@ -13,11 +14,11 @@ function MainNav() {
             <Link to="/new-meetups">New Meetups</Link>
           </li>
           <li>
-            <Link to="/favorites">Favorites</Link>
+            <Link to="/favorites">My Favorites</Link>
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 }
 
